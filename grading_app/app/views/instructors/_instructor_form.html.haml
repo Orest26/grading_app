@@ -1,0 +1,49 @@
+- unless @instructor.errors.empty?
+
+  #warning
+
+    Errors prevented your profile from being #{controller.action_name}d:
+
+    %ul
+
+      - @instructor.errors.full_messages.each do |error|
+
+        %li= error
+        
+- unless @password_mismatch.empty?
+
+  #warning
+
+    Errors prevented your profile from being #{controller.action_name}d:
+    
+    %ul
+
+      %li= @password_mismatch
+
+%table.center
+  %tbody
+    %tr
+      %td
+        = label :instructor, :name, 'Instructor Name'
+      %td
+        = text_field :instructor, 'name'
+    %tr
+      %td
+        = label :instructor, :surname, 'Instructor Surname'
+      %td
+        = text_field :instructor, 'surname'
+    %tr
+      %td
+        = label :instructor, :email, 'Instructor Email'
+      %td    
+        = text_field :instructor, 'email', :disabled => true
+    %tr
+      %td
+        = label :instructor, :password, 'Instructor Password'
+      %td    
+        = password_field :instructor , 'password'
+    %tr
+      %td
+        = label :instructor, :password1, 'Reenter Password'
+      %td    
+        = password_field :instructor , 'password1'

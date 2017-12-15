@@ -1,0 +1,6 @@
+%h2 Edit Instructor
+
+= form_tag instructor_path(@instructor), :method => :put do
+  = render partial: 'instructor_form' 
+  = submit_tag 'Save Changes'
+=link_to 'Back', instructor_homepage_path

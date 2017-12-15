@@ -1,0 +1,6 @@
+%h2 Create New Course
+
+= form_tag courses_path, :method => :post do
+  = render partial: 'course_form' 
+  = submit_tag 'Create Course'
+= link_to 'Back', courses_path

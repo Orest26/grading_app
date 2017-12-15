@@ -1,0 +1,13 @@
+%h1 Instructor
+
+%table.center
+  %thead
+    %tr
+      %th.center Menu
+  %tbody
+    %tr
+      %th.center= link_to 'Edit Profile', edit_instructor_path(@current_user)
+    %tr
+      %th.center= link_to 'Students', students_path
+    %tr
+      %th.center= link_to 'Courses', courses_path

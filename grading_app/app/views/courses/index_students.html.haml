@@ -1,0 +1,17 @@
+-#  This file is app/views/students/index.html.haml
+%h1 All Students of #{@course.name}
+
+%table#students.center
+  %thead
+    %tr
+      %th Name
+      %th Surname 
+  %tbody
+  = render partial: 'student', collection: @students
+  
+%p
+= form_tag '/courses/'+params[:course_id] +'/add_student', :method => :get do
+  = select_tag :student , options_from_collection_for_select(@allstudents, "id", "name")
+  - if @allstudents.empty? then val=true  end
+  = submit_tag "Add Student" , disabled: val
+= link_to "Back", course_path(@course)

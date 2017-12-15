@@ -1,0 +1,6 @@
+%h2 Edit Course
+
+= form_tag course_path(@course), :method => :put do
+  = render partial: 'course_form' 
+  = submit_tag 'Save Changes'
+= link_to 'Back to course list', courses_path

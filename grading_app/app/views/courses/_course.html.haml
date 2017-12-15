@@ -1,0 +1,10 @@
+-# A single row of the All Courses table
+%tr
+  %td= course.code 
+  %td= course.name
+  %td= course.semester_offered
+  %td= course.catalog_data
+  - if @current_user  
+    %td= link_to "More", course_path(course)
+  -else
+    %td= link_to 'Assessment Items', course_assessmentitems_path(course)

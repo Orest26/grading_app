@@ -1,0 +1,30 @@
+-#  This file is app/views/assessmentitems/index.html.haml
+%h1 All Assessment Items for #{@course.name}
+
+%table.center
+
+  %thead 
+    %tr
+      %th Name
+      %th Weight
+      %th Max Grade
+      %th Min Grade
+      %th Avg Grade
+  %tbody 
+  - @assessmentitems.each do |assessmentitem|
+    %tr
+      %td #{assessmentitem.name}
+      %td #{assessmentitem.weight}
+      %td #{assessmentitem.max_min_grade[:max]}
+      %td #{assessmentitem.max_min_grade[:min]}
+      %td #{assessmentitem.max_min_grade[:avg]}
+      - if @current_user 
+        %td= link_to 'Delete', course_assessmentitem_path(@course,assessmentitem), :method => 'delete', :data => {:confirm => 'Are you sure?'}
+        %td= link_to 'Edit', edit_course_assessmentitem_path(@course,assessmentitem), :method => 'get'
+- if @current_user
+  %p
+  '
+  = link_to 'Add Assessment Item', new_course_assessmentitem_path(@course)
+  ' | '
+  = link_to 'Back to courses', courses_path
+  '

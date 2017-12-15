@@ -1,0 +1,21 @@
+-# in app/views/students/show.html.haml
+%h2 Details: #{@student.name}
+
+%ul#details
+  %li
+    Student name:
+    = @student.name
+  %li
+    Student Surname:
+    = @student.surname
+  %li
+    Student Email:
+    = @student.email
+
+
+
+= link_to 'Edit', edit_student_path(@student)
+= button_to 'Delete', student_path(@student), :method => 'delete', :data => {:confirm => 'Are you sure?'} 
+-#= link_to 'Add Student', new_course_student_path(@course)
+-#= link_to 'Add Assessment Item', new_course_assessmentitem_path(@course)
+= link_to 'Back to student list', students_path

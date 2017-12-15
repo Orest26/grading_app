@@ -1,0 +1,5 @@
+-# Single row of Students
+%tr
+  %td= student.name 
+  %td= student.surname
+  %td= link_to " More about #{student.name}", student_path(student)

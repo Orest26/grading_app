@@ -1,0 +1,17 @@
+-#  This file is app/views/students/index.html.haml
+%h1 Students
+
+%table#students.center
+  %thead
+    %tr
+      %th Name
+      %th Surname 
+  %tbody
+  = render partial: 'student', collection: @students
+
+%p  
+'
+= link_to 'Add new Student', new_student_path
+' | '
+= link_to 'Back to homepage', instructor_homepage_path
+'

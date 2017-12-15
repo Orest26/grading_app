@@ -1,0 +1,22 @@
+%table.center
+  %tbody
+    %tr
+      %td
+        = label :course, :code, 'Course Code'
+      %td
+        = text_field :course, 'code'
+    %tr
+      %td
+        = label :course, :name, 'Course Name'
+      %td
+        = text_field :course, 'name'
+    %tr
+      %td
+        = label :course, :semester_offered, 'Semester Offered'
+      %td    
+        = text_field :course, 'semester_offered'
+    %tr
+      %td
+        = label :course, :catalog_data, 'Catalog Data'
+      %td    
+        = text_area :course, 'catalog_data'

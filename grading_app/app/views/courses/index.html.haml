@@ -1,0 +1,20 @@
+-#  This file is app/views/courses/index.html.haml
+%h1 All Courses
+
+%table#courses.center
+  %thead
+    %tr
+      %th Code 
+      %th Name 
+      %th Semester 
+      %th Catalog 
+  %tbody
+  = render partial: 'course', collection: @courses
+  
+- if @current_user
+  %p
+  '
+  = link_to 'Add new course', new_course_path
+  ' | '
+  = link_to 'Back to homepage', instructor_homepage_path
+  '

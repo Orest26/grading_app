@@ -1,0 +1,7 @@
+#login
+  - if @current_user
+    %p
+      %welcome #{@current_user.email}
+      = link_to 'Log Out', logout_path, :method => :post
+  - else
+    %p.login= link_to 'Click here to Login', '/login'
